@@ -1,7 +1,6 @@
 import json
 
 import os.path
-from shutil import copyfile
 
 import replace_line as rl
 import msgfunc as prnt
@@ -19,7 +18,7 @@ def replace_wallpaper( configuration, json_file):
             rl.replace_line( configuration['nitrogen-config'], 'file', 'file= '+configuration['wallpaper-path']+wallpaper)
             new_file='wallpapers/'+wallpaper
             try:
-                copyfile(new_file, configuration['wallpaper-path']+wallpaper)
+                fileu.copy_file(new_file, configuration['wallpaper-path']+wallpaper)
                 prnt.prnt( '-s', 'Installed the new file successfully!')
                 return True
             except:

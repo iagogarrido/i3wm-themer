@@ -1,5 +1,4 @@
 import os.path
-from shutil import copyfile
 
 import fileutils as fileu
 import msgfunc as prnt
@@ -8,7 +7,7 @@ def install_file( config, install_file, new_file):
     if(fileu.locate_file(config[install_file])):
         prnt.prnt( '-s', 'Located '+config[install_file]+' file!')
         try:
-            copyfile(new_file, config[install_file])
+            fileu.copy_file(new_file, config[install_file])
             prnt.prnt( '-s', 'Installed the new file successfully!')
             return True
         except:

@@ -1,5 +1,4 @@
 import os.path
-from shutil import copyfile
 
 import fileutils as fileu
 import msgfunc as prnt
@@ -8,7 +7,7 @@ def backup_file( config, back_file, destination):
     if(fileu.locate_file(config[back_file])):
         prnt.prnt( '-s', 'Located your '+config[back_file]+' file!')
         try:
-            copyfile( config[back_file], destination)
+            fileu.copy_file( config[back_file], destination)
             prnt.prnt( '-s', 'Backed it up successfully!')
             return True
         except:

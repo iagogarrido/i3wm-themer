@@ -1,10 +1,12 @@
 from tempfile import mkstemp
 from shutil import move
-from os import fdopen, remove
+from os import fdopen, remove, path
 
 import msgfunc as prnt
 
 def replace_line(file, pattern, new_line):
+    if file.startswith( '~' ):
+        file = path.expanduser( file )
     fh, abs_path = mkstemp()
     with fdopen(fh, 'w') as new_file:
         with open( file ) as old_file:
