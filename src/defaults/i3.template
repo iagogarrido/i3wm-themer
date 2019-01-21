@@ -180,8 +180,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    #bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym l exec --no-startup-id i3lock -i ~/i3wm-themer/src/wallpapers/001.png -c 000000 -t
+    # LOCK SETTING
+    ## default setting
+    # bindsym l exec --no-startup-id i3exit lock, mode "default"
+    ## i3wm-themer setting (custom)
+    # bindsym l exec --no-startup-id i3lock -i ~/i3wm-themer/src/wallpapers/001.png -c 000000 -t
+    ## ubuntu compatible
+    bindsym l exec --no-startup-id dm-tool lock
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
