@@ -136,6 +136,7 @@ for_window [title="(?i)Calculator"] floating enable border none
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="Gdebi-gtk"] floating enable border pixel 1
 for_window [class="Gedit"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
@@ -287,3 +288,8 @@ mode "$mode_gaps_outer" {
 # Custom commands
 exec "setxkbmap -layout us -variant altgr-intl -option nodeadkeys"
 
+# Polkit agent
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+# Bluetooth applet
+exec --no-startup-id blueman-applet
