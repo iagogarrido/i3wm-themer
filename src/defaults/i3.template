@@ -150,7 +150,6 @@ for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Nm-connection-editor"] floating enable border pixel 1
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-for_window [class="org.remmina.Remmina"] floating enable border pixel 1
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal

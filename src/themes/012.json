@@ -37,7 +37,7 @@
         "foreground": "#c5c8c6",
         "modules-left": "i3",
         "modules-center": "date",
-        "modules-right": "wlan eth powermenu",
+        "modules-right": "wlan eth battery powermenu",
         "label-unfocused-background": "#cbd1cd",
         "label-unfocused-foreground": "#1e1e20",
         "label-mode-background": "#cbd1cd",
