@@ -37,7 +37,7 @@
         "foreground": "#EAD49B",
         "modules-left": "i3",
         "modules-center": "date",
-        "modules-right": "wlan eth battery powermenu",
+        "modules-right": "spotify wlan eth battery powermenu",
         "label-unfocused-background": "#78824b",
         "label-unfocused-foreground": "#1E272B",
         "label-mode-background": "#78824b",
