@@ -18,7 +18,7 @@ sudo ln -s /sbin/poweroff /usr/bin/poweroff
 #refresh apt
 sudo apt update
 
-sudo apt-get install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev dh-autoreconf unzip git -y
+sudo apt-get install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev dh-autoreconf unzip git xautolock -y
 
 git clone --recursive https://github.com/Airblader/xcb-util-xrm.git
 cd xcb-util-xrm/
@@ -122,8 +122,15 @@ sed -i -e "s/USER/$USER/g" config.yaml
 mkdir $HOME/Backup
 python i3wm-themer.py --config config.yaml --backup $HOME/Backup
 
+#scripts - local
+cp ../scripts/i3wmthemer_bar_launch.sh /home/$USER/.config/polybar/
+cp ../scripts/blurlock /home/$USER/.local/bin/
+
+#scripts - remote
+#polybar-spotify (https://github.com/Jvanrhijn/polybar-spotify)
+curl -sLo /home/$USER/.config/polybar/spotify_status.py https://raw.githubusercontent.com/Jvanrhijn/polybar-spotify/master/spotify_status.py && chmod +x /home/$USER/.config/polybar/spotify_status.py
+
 #configure and set theme to default
-cp -r ../scripts/* /home/$USER/.config/polybar/
 python i3wm-themer.py --config config.yaml --install defaults/
 
 echo ""

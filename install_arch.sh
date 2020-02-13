@@ -78,8 +78,15 @@ sed -i -e "s/USER/$USER/g" config.yaml
 mkdir $HOME/Backup
 python i3wm-themer.py --config config.yaml --backup $HOME/Backup
 
+#scripts - local
+cp ../scripts/i3wmthemer_bar_launch.sh /home/$USER/.config/polybar/
+cp ../scripts/blurlock /home/$USER/.local/bin/
+
+#scripts - remote
+#polybar-spotify (https://github.com/Jvanrhijn/polybar-spotify)
+curl -sLo /home/$USER/.config/polybar/spotify_status.py https://raw.githubusercontent.com/Jvanrhijn/polybar-spotify/master/spotify_status.py && chmod +x /home/$USER/.config/polybar/spotify_status.py
+
 #configure and set theme to 000
-cp -r ../scripts/* /home/$USER/.config/polybar/
 python i3wm-themer.py --config config.yaml --install defaults/
 
 echo ""
